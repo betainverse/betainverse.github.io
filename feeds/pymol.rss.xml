@@ -16,9 +16,45 @@
 &lt;p&gt;This post expands on &lt;a href="http://kpwu.wordpress.com/2007/11/27/pymol-example-coloring-surface-by-b-factor/"&gt;info&lt;/a&gt; from a few other &lt;a href="http://kpwu.wordpress.com/2012/09/11/pymol-custom-spectrum-colors/"&gt;blog&lt;/a&gt; posts.&lt;/p&gt;
 
 &lt;ol&gt;
+ &lt;li&gt;
+  &lt;p&gt;Your data should be in a tab-delimited text file, formatted like this:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;3	0.677985
+4	0.794402
+5	0.972709&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;You may need to remove extra columns and/or headerscan cause problems. If you exported your file from excel, you may have to change your line break format. From a mac, you might see a bunch of ^M characters in your file. You can use a terminal to do one of these commands to fix the file:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;tr '\r' '\n' &amp;lt; macfile.txt &amp;gt; unixfile.txt
+tr -d '\r' &amp;lt; windowsfile.txt &amp;gt; unixfile.txt&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;Save this data file to a known location, let&amp;rsquo;s say /Users/username/Documents/datafile.txt. It might make things easier to avoid having spaces in file or folder names. It seems to be important to use the absolute filename, rather than using shortcuts like &lt;code&gt;~&lt;/code&gt;.&lt;/li&gt;
  &lt;li&gt;Download data2bfactor.py from &lt;a href="http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/"&gt;http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/&lt;/a&gt;.&lt;/li&gt;
  &lt;li&gt;Download spectrumany.py from &lt;a href="http://pymolwiki.org/index.php/Spectrumany"&gt;http://pymolwiki.org/index.php/Spectrumany&lt;/a&gt;.&lt;/li&gt;
- &lt;li&gt;Save these scripts to a known location, let&amp;rsquo;s say ~/scripts/.&lt;/li&gt;&lt;/ol&gt;
+ &lt;li&gt;Save these scripts to a known location, let&amp;rsquo;s say ~/scripts/.&lt;/li&gt;
+ &lt;li&gt;Open pymol &amp;amp; load your protein structure.&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Run the scripts you downloaded using the PyMOL&amp;gt; commandline:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; run ~/scripts/data2bfactor.py
+PyMOL&amp;gt; run ~/scripts/spectrumany.py&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Make a named selection for the set of residues you want to color:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; select MyChainA, 3TGN and chain A and not resn Zn&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;You may want to set all the b-factor data for your selection to 0 or to some other number beforehand, because any residues not mentioned in your data file will retain their original crystallographic B-factor:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; alter MyChainA, b=0&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Now load your data onto your selection using the data2b_res function defined within data2bfactor.py:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; data2b_res MyChainA, /Users/username/Documents/datafile.txt&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Now color by B-factor. If you are lucky and the color gradient you want is already included in Pymol, you can use the function spectrum:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; spectrum b, rainbow, MyChainA, minimum=0.6, maximum=1&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;You will need to play around with minimum and maximum to optimize the image according to your data.&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;If you want a color gradient not already defined in Pymol, you will need to use the spectrumany command:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; spectrumany b, red gray80, MyChainA, minimum=0.6,maximum=1&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Now use the Display menu to make sure the Background is not set to be opaque, and ray trace the image:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; ray&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;Save your image and your session!&lt;/li&gt;&lt;/ol&gt;
 
-&lt;p&gt;Enter the following at the pymol command line: &lt;code&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="figure"&gt;&lt;img src="../../img/Zn_hNOE.png" alt="" /&gt;
+ &lt;p class="caption"&gt;&lt;/p&gt;&lt;/div&gt;
 &lt;!-- more--&gt;&lt;/html&gt;</description></item></channel></rss>

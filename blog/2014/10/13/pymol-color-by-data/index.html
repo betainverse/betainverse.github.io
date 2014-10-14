@@ -4,13 +4,13 @@
 
     <meta charset="utf-8">
     <title>Pymol Color By Data</title>
-    <meta name="description" content="This post expands on info from a few other blog posts.   Download data2bfactor.py from http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/. Download spectrumany.py from http://pymolwiki.org/index.php/Spectrumany.   Save these scripts to a known location...">
+    <meta name="description" content="This post expands on info from a few other blog posts.      Your data should be in a tab-delimited text file, formatted like this:    `3	0.677985 4	0.794402 5	0.972709`    You may need to remove extra columns and/or headerscan cause problems. If you expor...">
     <meta name="author"      content="The Unknown Author">
     <meta name="keywords"    content="pymol">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="http://www.example.com/blog/2014/10/13/pymol-color-by-data/">
-    <link rel="next" href="/blog/2012/01/01/a-2012-blog-post/">
+
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
@@ -64,15 +64,7 @@
               <ul class="dropdown-menu">
                 <li><a href="/index.html">All Posts</a></li>
 
-<li><a href="/tags/bar.html">bar</a></li>
-
-<li><a href="/tags/baz.html">baz</a></li>
-
-<li><a href="/tags/foo.html">foo</a></li>
-
 <li><a href="/tags/pymol.html">pymol</a></li>
-
-<li><a href="/tags/tag-with-spaces.html">tag with spaces</a></li>
               </ul>
             </li>
             <li>
@@ -104,11 +96,47 @@
 <p>This post expands on <a href="http://kpwu.wordpress.com/2007/11/27/pymol-example-coloring-surface-by-b-factor/">info</a> from a few other <a href="http://kpwu.wordpress.com/2012/09/11/pymol-custom-spectrum-colors/">blog</a> posts.</p>
 
 <ol>
+ <li>
+  <p>Your data should be in a tab-delimited text file, formatted like this:</p>
+  <pre><code>3	0.677985
+4	0.794402
+5	0.972709</code></pre></li>
+ <li>
+  <p>You may need to remove extra columns and/or headerscan cause problems. If you exported your file from excel, you may have to change your line break format. From a mac, you might see a bunch of ^M characters in your file. You can use a terminal to do one of these commands to fix the file:</p>
+  <pre><code>tr '\r' '\n' &lt; macfile.txt &gt; unixfile.txt
+tr -d '\r' &lt; windowsfile.txt &gt; unixfile.txt</code></pre></li>
+ <li>Save this data file to a known location, let&rsquo;s say /Users/username/Documents/datafile.txt. It might make things easier to avoid having spaces in file or folder names. It seems to be important to use the absolute filename, rather than using shortcuts like <code>~</code>.</li>
  <li>Download data2bfactor.py from <a href="http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/">http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/</a>.</li>
  <li>Download spectrumany.py from <a href="http://pymolwiki.org/index.php/Spectrumany">http://pymolwiki.org/index.php/Spectrumany</a>.</li>
- <li>Save these scripts to a known location, let&rsquo;s say ~/scripts/.</li></ol>
+ <li>Save these scripts to a known location, let&rsquo;s say ~/scripts/.</li>
+ <li>Open pymol &amp; load your protein structure.</li>
+ <li>
+  <p>Run the scripts you downloaded using the PyMOL&gt; commandline:</p>
+  <pre><code>PyMOL&gt; run ~/scripts/data2bfactor.py
+PyMOL&gt; run ~/scripts/spectrumany.py</code></pre></li>
+ <li>
+  <p>Make a named selection for the set of residues you want to color:</p>
+  <pre><code>PyMOL&gt; select MyChainA, 3TGN and chain A and not resn Zn</code></pre></li>
+ <li>
+  <p>You may want to set all the b-factor data for your selection to 0 or to some other number beforehand, because any residues not mentioned in your data file will retain their original crystallographic B-factor:</p>
+  <pre><code>PyMOL&gt; alter MyChainA, b=0</code></pre></li>
+ <li>
+  <p>Now load your data onto your selection using the data2b_res function defined within data2bfactor.py:</p>
+  <pre><code>PyMOL&gt; data2b_res MyChainA, /Users/username/Documents/datafile.txt</code></pre></li>
+ <li>
+  <p>Now color by B-factor. If you are lucky and the color gradient you want is already included in Pymol, you can use the function spectrum:</p>
+  <pre><code>PyMOL&gt; spectrum b, rainbow, MyChainA, minimum=0.6, maximum=1</code></pre></li>
+ <li>You will need to play around with minimum and maximum to optimize the image according to your data.</li>
+ <li>
+  <p>If you want a color gradient not already defined in Pymol, you will need to use the spectrumany command:</p>
+  <pre><code>PyMOL&gt; spectrumany b, red gray80, MyChainA, minimum=0.6,maximum=1</code></pre></li>
+ <li>
+  <p>Now use the Display menu to make sure the Background is not set to be opaque, and ray trace the image:</p>
+  <pre><code>PyMOL&gt; ray</code></pre></li>
+ <li>Save your image and your session!</li></ol>
 
-<p>Enter the following at the pymol command line: <code></code></p>
+<div class="figure"><img src="../../img/Zn_hNOE.png" alt="" />
+ <p class="caption"></p></div>
 <!-- more-->
   <footer>
     <script type="text/javascript">
@@ -142,9 +170,7 @@
     <div id="disqus_thread"></div>
     <ul class="pager">
 
-    <li class="next">
-      <a href="/blog/2012/01/01/a-2012-blog-post/"><em>A 2012 blog post</em> &rarr;</a>
-    </li>
+
     </ul>
   </footer>
 </article>
