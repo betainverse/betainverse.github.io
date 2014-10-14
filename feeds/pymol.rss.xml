@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>My Awesome Blog: Posts tagged 'pymol'</title>
+  <description>My Awesome Blog: Posts tagged 'pymol'</description>
+  <link>http://www.example.com/tags/pymol.html</link>
+  <lastBuildDate>Mon, 13 Oct 2014 14:27:13 EDT</lastBuildDate>
+  <pubDate>Mon, 13 Oct 2014 14:27:13 EDT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Pymol Color By Data</title>
+   <link>http://www.example.com/blog/2014/10/13/pymol-color-by-data/?utm_source=pymol&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2014-10-13-pymol-color-by-data</guid>
+   <pubDate>Mon, 13 Oct 2014 14:27:13 EDT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;This post expands on &lt;a href="http://kpwu.wordpress.com/2007/11/27/pymol-example-coloring-surface-by-b-factor/"&gt;info&lt;/a&gt; from a few other &lt;a href="http://kpwu.wordpress.com/2012/09/11/pymol-custom-spectrum-colors/"&gt;blog&lt;/a&gt; posts.&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;Download data2bfactor.py from &lt;a href="http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/"&gt;http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/&lt;/a&gt;.&lt;/li&gt;
+ &lt;li&gt;Download spectrumany.py from &lt;a href="http://pymolwiki.org/index.php/Spectrumany"&gt;http://pymolwiki.org/index.php/Spectrumany&lt;/a&gt;.&lt;/li&gt;
+ &lt;li&gt;Save these scripts to a known location, let&amp;rsquo;s say ~/scripts/.&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;Enter the following at the pymol command line: &lt;code&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;!-- more--&gt;&lt;/html&gt;</description></item></channel></rss>
