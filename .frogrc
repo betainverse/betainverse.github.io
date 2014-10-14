@@ -2,15 +2,15 @@
 scheme/host = http://www.example.com
 
 # The title of the blog. Used when generating feeds.
-title = My Awesome Blog
+title = Scripts for structural biology
 
 # The author. Used when generating feeds, and provided to
 # `page-template.html` as the template variable `@author`.
-author = The Unknown Author
+author = Katie Edmonds
 
 # What editor to launch with --edit. $EDITOR means to use $EDITOR from
 # the environment
-editor = $EDITOR
+editor = emacs
 
 # The command to run, in case you need to customize how the editor is
 # called. For example, {editor} {filename} will call:
