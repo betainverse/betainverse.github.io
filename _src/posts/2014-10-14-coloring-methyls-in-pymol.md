@@ -2,7 +2,7 @@
     Date: 2014-10-14T15:07:41
     Tags: pymol
 
-This post expands on yesterday's post that was focused on coloring protein structures by residue in Pymol. 
+This post expands on [yesterday's](http://betainverse.github.io/blog/2014/10/13/pymol-color-by-data/) post that was focused on coloring protein structures by residue in Pymol. 
 
 1. Your data should be in a tab-delimited text file, formatted like this:
 
