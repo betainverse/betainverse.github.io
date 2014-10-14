@@ -3,14 +3,14 @@
   <head>
 
     <meta charset="utf-8">
-    <title>Scripts for structural biology</title>
-    <meta name="description" content="Scripts for structural biology">
+    <title>Coloring Methyls in Pymol</title>
+    <meta name="description" content="This post expands on yesterday's post that was focused on coloring protein structures by residue in Pymol.      Your data should be in a tab-delimited text file, formatted like this:    `2	ALA	CB	0.03416350 8	ILE	CD1	0.43143940 13	LEU	CD1	0.50597498` Make...">
     <meta name="author"      content="Katie Edmonds">
-    <meta name="keywords"    content="pymol, all">
+    <meta name="keywords"    content="pymol">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://www.example.com/index.html">
-
+    <link rel="canonical" href="http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/">
+    <link rel="next" href="/blog/2014/10/13/pymol-color-by-data/">
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
@@ -82,16 +82,13 @@
         <!-- Main column -->
         <div id="content" class="col-md-12">
 
-          <h1>Welcome</h1>
-          <p>Here is some text that only goes on the home page,
-            because <code>@uri-path</code> is
-            <code>/index.html</code>.</p> 
+
 
 
 
           <article>
   <header>
-    <h2><a href='/blog/2014/10/14/coloring-methyls-in-pymol/'>Coloring Methyls in Pymol</a></h2>
+    <h1>Coloring Methyls in Pymol</h1>
     <p class='date-and-tags'>
 <time datetime="2014-10-14" pubdate="true">2014-10-14</time> :: <span class="tags"><a href="/tags/pymol.html">pymol</a></span></p>
   </header>
@@ -130,67 +127,44 @@ PyMOL&gt; run ~/scripts/spectrumany.py</code></pre></li>
 
 <div class="figure"><img src="/img/methyls.png" alt="" />
  <p class="caption"></p></div>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/"></g:plusone>
+    <script type="text/javascript">
+      var disqus_shortname = 'shortname';
+      (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <div id="disqus_thread"></div>
+    <ul class="pager">
+
+    <li class="next">
+      <a href="/blog/2014/10/13/pymol-color-by-data/"><em>Pymol Color By Data</em> &rarr;</a>
+    </li>
+    </ul>
+  </footer>
 </article>
-<article>
-  <header>
-    <h2><a href='/blog/2014/10/13/pymol-color-by-data/'>Pymol Color By Data</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2014-10-13" pubdate="true">2014-10-13</time> :: <span class="tags"><a href="/tags/pymol.html">pymol</a></span></p>
-  </header>
-
-<p>This post expands on <a href="http://kpwu.wordpress.com/2007/11/27/pymol-example-coloring-surface-by-b-factor/">info</a> from a few other <a href="http://kpwu.wordpress.com/2012/09/11/pymol-custom-spectrum-colors/">blog</a> posts.</p>
-
-<ol>
- <li>
-  <p>Your data should be in a tab-delimited text file, formatted like this:</p>
-  <pre><code>3	0.677985
-4	0.794402
-5	0.972709</code></pre></li>
- <li>
-  <p>You may need to remove extra columns and/or headerscan cause problems. If you exported your file from excel, you may have to change your line break format. From a mac, you might see a bunch of ^M characters in your file. You can use a terminal to do one of these commands to fix the file:</p>
-  <pre><code>tr '\r' '\n' &lt; macfile.txt &gt; unixfile.txt
-tr -d '\r' &lt; windowsfile.txt &gt; unixfile.txt</code></pre></li>
- <li>Save this data file to a known location, let&rsquo;s say /Users/username/Documents/datafile.txt. It might make things easier to avoid having spaces in file or folder names. It seems to be important to use the absolute filename, rather than using shortcuts like <code>~</code>.</li>
- <li>Download data2bfactor.py from <a href="http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/">http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/</a>.</li>
- <li>Download spectrumany.py from <a href="http://pymolwiki.org/index.php/Spectrumany">http://pymolwiki.org/index.php/Spectrumany</a>.</li>
- <li>Save these scripts to a known location, let&rsquo;s say ~/scripts/.</li>
- <li>Open pymol &amp; load your protein structure.</li>
- <li>
-  <p>Run the scripts you downloaded using the PyMOL&gt; commandline:</p>
-  <pre><code>PyMOL&gt; run ~/scripts/data2bfactor.py
-PyMOL&gt; run ~/scripts/spectrumany.py</code></pre></li>
- <li>
-  <p>Make a named selection for the set of residues you want to color:</p>
-  <pre><code>PyMOL&gt; select MyChainA, 3TGN and chain A and not resn Zn</code></pre></li>
- <li>
-  <p>You may want to set all the b-factor data for your selection to 0 or to some other number beforehand, because any residues not mentioned in your data file will retain their original crystallographic B-factor:</p>
-  <pre><code>PyMOL&gt; alter MyChainA, b=0</code></pre></li>
- <li>
-  <p>Now load your data onto your selection using the data2b_res function defined within data2bfactor.py:</p>
-  <pre><code>PyMOL&gt; data2b_res MyChainA, /Users/username/Documents/datafile.txt</code></pre></li>
- <li>
-  <p>Now color by B-factor. If you are lucky and the color gradient you want is already included in Pymol, you can use the function spectrum:</p>
-  <pre><code>PyMOL&gt; spectrum b, rainbow, MyChainA, minimum=0.6, maximum=1</code></pre></li>
- <li>You will need to play around with minimum and maximum to optimize the image according to your data.</li>
- <li>
-  <p>If you want a color gradient not already defined in Pymol, you will need to use the spectrumany command:</p>
-  <pre><code>PyMOL&gt; spectrumany b, red gray80, MyChainA, minimum=0.6,maximum=1</code></pre></li>
- <li>
-  <p>Now use the Display menu to make sure the Background is not set to be opaque, and ray trace the image:</p>
-  <pre><code>PyMOL&gt; ray</code></pre></li>
- <li>Save your image and your session!</li></ol>
-
-<div class="figure"><img src="/img/Zn_hNOE.png" alt="" />
- <p class="caption"></p></div>
-<footer class="read-more"><a href="/blog/2014/10/13/pymol-color-by-data/">&hellip;more&hellip;</a></footer>
-</article>
-<footer>
- <ul class="pagination">
-  <li class="disabled"><a href="#">
-    <quote>&larr;</quote></a></li>
-  <li class="active"><a href="/index.html">1</a></li>
-  <li class="disabled"><a href="#">
-    <quote>&rarr;</quote></a></li></ul></footer>
         </div>
       </div>
       <footer>

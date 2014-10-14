@@ -4,9 +4,49 @@
   <title>Scripts for structural biology: Scripts for structural biology</title>
   <description>Scripts for structural biology: Scripts for structural biology</description>
   <link>http://www.example.com/index.html</link>
-  <lastBuildDate>Mon, 13 Oct 2014 14:27:13 EDT</lastBuildDate>
-  <pubDate>Mon, 13 Oct 2014 14:27:13 EDT</pubDate>
+  <lastBuildDate>Tue, 14 Oct 2014 15:07:41 EDT</lastBuildDate>
+  <pubDate>Tue, 14 Oct 2014 15:07:41 EDT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>Coloring Methyls in Pymol</title>
+   <link>http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2014-10-14-coloring-methyls-in-pymol</guid>
+   <pubDate>Tue, 14 Oct 2014 15:07:41 EDT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;This post expands on yesterday&amp;rsquo;s post that was focused on coloring protein structures by residue in Pymol.&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;
+  &lt;p&gt;Your data should be in a tab-delimited text file, formatted like this:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;2	ALA	CB	0.03416350
+8	ILE	CD1	0.43143940
+13	LEU	CD1	0.50597498&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;Make sure you have downloaded data2bfactor.py from &lt;a href="http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/"&gt;http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/&lt;/a&gt;.&lt;/li&gt;
+ &lt;li&gt;Open pymol &amp;amp; load your protein structure.&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Run any scripts you want to use:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; run ~/scripts/data2bfactor.py
+PyMOL&amp;gt; run ~/scripts/spectrumany.py&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;You may want to set all the b-factor data for your protein to &amp;ndash;1 or to some other number beforehand, because any residues not mentioned in your data file will retain their original crystallographic B-factor:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; alter MyProtein, b=-1&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Define a selection of all your methyls:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; select MyMethyls, (resn ALA and name CB)+(resn ILE and name CD1)+(resn LEU and name CD1+CD2)+(resn MET+MSE and name CE)+(resn VAL and name CG1+CG2)+(resn THR and name CG2)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Display things nicely:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; hide lines&lt;/code&gt;&lt;/pre&gt;
+  &lt;p&gt;PyMOL&amp;gt; show cartoon  PyMOL&amp;gt; dss  PyMOL&amp;gt; color gray80, MyProtein  PyMOL&amp;gt; show spheres, MyMethyls  PyMOL&amp;gt; show sticks, resn ALA+ILE+LEU+VAL+MET and not (name c,o,n)&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Now load your data onto your selection using the data2b_atom function defined within data2bfactor.py.&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; data2b_atom MyMethyls, /Users/username/Documents/datafile.txt&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;Apply the color gradient:&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;PyMOL&amp;gt; spectrumany b, red yellow, methyls&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;Ray trace, save the image!&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/img/methyls.png" alt="" /&gt;
+ &lt;p class="caption"&gt;&lt;/p&gt;&lt;/div&gt;&lt;/html&gt;</description></item>
   <item>
    <title>Pymol Color By Data</title>
    <link>http://www.example.com/blog/2014/10/13/pymol-color-by-data/?utm_source=all&amp;utm_medium=RSS</link>
