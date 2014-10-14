@@ -13,7 +13,7 @@
    <guid>urn:http-www-example-com:-blog-2014-10-14-coloring-methyls-in-pymol</guid>
    <pubDate>Tue, 14 Oct 2014 15:07:41 EDT</pubDate>
    <description>&lt;html&gt;
-&lt;p&gt;This post expands on yesterday&amp;rsquo;s post that was focused on coloring protein structures by residue in Pymol.&lt;/p&gt;
+&lt;p&gt;This post expands on &lt;a href="http://betainverse.github.io/blog/2014/10/13/pymol-color-by-data/"&gt;yesterday&amp;rsquo;s&lt;/a&gt; post that was focused on coloring protein structures by residue in Pymol.&lt;/p&gt;
 
 &lt;ol&gt;
  &lt;li&gt;

@@ -14,7 +14,7 @@
   <author>
    <name>Katie Edmonds</name></author>
   <content type="html">&lt;html&gt;
-&lt;p&gt;This post expands on yesterday&amp;rsquo;s post that was focused on coloring protein structures by residue in Pymol.&lt;/p&gt;
+&lt;p&gt;This post expands on &lt;a href="http://betainverse.github.io/blog/2014/10/13/pymol-color-by-data/"&gt;yesterday&amp;rsquo;s&lt;/a&gt; post that was focused on coloring protein structures by residue in Pymol.&lt;/p&gt;
 
 &lt;ol&gt;
  &lt;li&gt;
