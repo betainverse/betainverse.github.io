@@ -9,22 +9,30 @@ This post expands on [info](http://kpwu.wordpress.com/2007/11/27/pymol-example-c
 3. Save these scripts to a known location, let's say ~/scripts/. 
 4. Open pymol & load your protein structure.
 5. Run the scripts you downloaded using the PyMOL> commandline:
+
 ```
 PyMOL> run ~/scripts/data2bfactor.py
 PyMOL> run ~/scripts/spectrumany.py
 ```
+
 6. Your data should be formatted like this:
+
 ```
 3	0.677985
 4	0.794402
 5	0.972709
 ```
+
 Extra columns can cause problems. Headers might cause problems. If you exported your file from excel, you may have to change your line break format. On a mac, you might see a bunch of ^M characters in your file, so you would use a terminal to do this:
+
 ```
 tr '\r' '\n' < macfile.txt > unixfile.txt
 ```
+
 If the file came from windows, you might need to do this:
+
 ```
 tr -d '\r' < windowsfile.txt > unixfile.txt
 ```
+
 <!-- more -->
