@@ -53,4 +53,3 @@ This post expands on [info](http://kpwu.wordpress.com/2007/11/27/pymol-example-c
 15. Save your image and your session!
 
 ![](/img/Zn_hNOE.png)
-<!-- more -->

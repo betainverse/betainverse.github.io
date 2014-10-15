@@ -16,6 +16,7 @@ This post expands on [yesterday's](http://betainverse.github.io/blog/2014/10/13/
 
         PyMOL> run ~/scripts/data2bfactor.py
         PyMOL> run ~/scripts/spectrumany.py
+
 5. You may want to set all the b-factor data for your protein to -1 or to some other number beforehand, because any residues not mentioned in your data file will retain their original crystallographic B-factor:
 
         PyMOL> alter MyProtein, b=-1
@@ -27,20 +28,20 @@ This post expands on [yesterday's](http://betainverse.github.io/blog/2014/10/13/
 7. Display things nicely:
 
         PyMOL> hide lines
-	PyMOL> show cartoon
+        PyMOL> show cartoon
         PyMOL> dss
         PyMOL> color gray80, MyProtein
         PyMOL> show spheres, MyMethyls
         PyMOL> show sticks, resn ALA+ILE+LEU+VAL+MET and not (name c,o,n)
 
-7. Now load your data onto your selection using the data2b_atom function defined within data2bfactor.py.
+8. Now load your data onto your selection using the data2b_atom function defined within data2bfactor.py.
 
         PyMOL> data2b_atom MyMethyls, /Users/username/Documents/datafile.txt
 
-8. Apply the color gradient:
+9. Apply the color gradient:
 
         PyMOL> spectrumany b, red yellow, methyls
 
-9. Ray trace, save the image!
+10. Ray trace, save the image!
 
 ![](/img/methyls.png)
