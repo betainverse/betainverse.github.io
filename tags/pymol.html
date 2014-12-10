@@ -64,6 +64,8 @@
               <ul class="dropdown-menu">
                 <li><a href="/index.html">All Posts</a></li>
 
+<li><a href="/tags/linux.html">linux</a></li>
+
 <li><a href="/tags/pymol.html">pymol</a></li>
               </ul>
             </li>
@@ -87,6 +89,30 @@
           <h1>Posts tagged <em>pymol</em></h1>
 
           <article>
+  <header>
+    <h2><a href='/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/'>Script to show methyls as spheres in Pymol</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2014-12-10" pubdate="true">2014-12-10</time> :: <span class="tags"><a href="/tags/pymol.html">pymol</a></span></p>
+  </header>
+
+<p>Here is a pymol script to show methyl groups on your protein as spheres, color-coded by residue type.</p>
+
+<p>Download the script <a href="https://raw.githubusercontent.com/betainverse/methyls/master/pymol/showmethyls.py">here</a>.</p>
+
+<p>Usage: Load the script into pymol using the run&hellip; item in the pymol File menu to select this script or load it from the Pymol command line, then actually run it using the showmethyls command:</p>
+
+<pre><code> PyMOL&gt; run /home/userName/path/toscript/showmethyls.py
+ PyMOL&gt; showmethyls</code></pre>
+
+<p>Note that you can use the cd command on the pymol command line as you would in bash/tcsh, if you don&rsquo;t remember the exact path to the script by heart.</p>
+
+<div class="figure"><img src="/img/spherelegend.png" alt="" />
+ <p class="caption"></p></div>
+
+<div class="figure"><img src="/img/methyls2.png" alt="" />
+ <p class="caption"></p></div>
+</article>
+<article>
   <header>
     <h2><a href='/blog/2014/10/14/coloring-methyls-in-pymol/'>Coloring Methyls in Pymol</a></h2>
     <p class='date-and-tags'>

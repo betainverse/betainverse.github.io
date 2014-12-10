@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>Coloring Methyls in Pymol</title>
-    <meta name="description" content="This post expands on yesterday's post that was focused on coloring protein structures by residue in Pymol.      Your data should be in a tab-delimited text file, formatted like this:    `2	ALA	CB	0.03416350 8	ILE	CD1	0.43143940 13	LEU	CD1	0.50597498` Make...">
+    <title>Script to show methyls as spheres in Pymol</title>
+    <meta name="description" content="Here is a pymol script to show methyl groups on your protein as spheres, color-coded by residue type.  Download the script here.  Usage: Load the script into pymol using the run item in the pymol File menu to select this script or load it from the Pymol c...">
     <meta name="author"      content="Katie Edmonds">
     <meta name="keywords"    content="pymol">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/">
-    <link rel="next" href="/blog/2014/10/13/pymol-color-by-data/">
-    <link rel="prev" href="/blog/2014/10/30/simple-linux-tutorials/">
+    <link rel="canonical" href="http://www.example.com/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/">
+    <link rel="next" href="/blog/2014/10/30/simple-linux-tutorials/">
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -90,48 +90,26 @@
 
           <article>
   <header>
-    <h1>Coloring Methyls in Pymol</h1>
+    <h1>Script to show methyls as spheres in Pymol</h1>
     <p class='date-and-tags'>
-<time datetime="2014-10-14" pubdate="true">2014-10-14</time> :: <span class="tags"><a href="/tags/pymol.html">pymol</a></span></p>
+<time datetime="2014-12-10" pubdate="true">2014-12-10</time> :: <span class="tags"><a href="/tags/pymol.html">pymol</a></span></p>
   </header>
 
-<p>This post expands on <a href="http://betainverse.github.io/blog/2014/10/13/pymol-color-by-data/">yesterday&rsquo;s</a> post that was focused on coloring protein structures by residue in Pymol.</p>
+<p>Here is a pymol script to show methyl groups on your protein as spheres, color-coded by residue type.</p>
 
-<ol>
- <li>
-  <p>Your data should be in a tab-delimited text file, formatted like this:</p>
-  <pre><code>2	ALA	CB	0.03416350
-8	ILE	CD1	0.43143940
-13	LEU	CD1	0.50597498</code></pre></li>
- <li>Make sure you have downloaded data2bfactor.py from <a href="http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/">http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/</a>.</li>
- <li>Open pymol &amp; load your protein structure.</li>
- <li>
-  <p>Run any scripts you want to use:</p>
-  <pre><code>PyMOL&gt; run ~/scripts/data2bfactor.py
-PyMOL&gt; run ~/scripts/spectrumany.py</code></pre></li>
- <li>
-  <p>You may want to set all the b-factor data for your protein to &ndash;1 or to some other number beforehand, because any residues not mentioned in your data file will retain their original crystallographic B-factor:</p>
-  <pre><code>PyMOL&gt; alter MyProtein, b=-1</code></pre></li>
- <li>
-  <p>Define a selection of all your methyls:</p>
-  <pre><code>PyMOL&gt; select MyMethyls, (resn ALA and name CB)+(resn ILE and name CD1)+(resn LEU and name CD1+CD2)+(resn MET+MSE and name CE)+(resn VAL and name CG1+CG2)+(resn THR and name CG2)</code></pre></li>
- <li>
-  <p>Display things nicely:</p>
-  <pre><code>PyMOL&gt; hide lines
-PyMOL&gt; show cartoon
-PyMOL&gt; dss
-PyMOL&gt; color gray80, MyProtein
-PyMOL&gt; show spheres, MyMethyls
-PyMOL&gt; show sticks, resn ALA+ILE+LEU+VAL+MET and not (name c,o,n)</code></pre></li>
- <li>
-  <p>Now load your data onto your selection using the data2b_atom function defined within data2bfactor.py.</p>
-  <pre><code>PyMOL&gt; data2b_atom MyMethyls, /Users/username/Documents/datafile.txt</code></pre></li>
- <li>
-  <p>Apply the color gradient:</p>
-  <pre><code>PyMOL&gt; spectrumany b, red yellow, methyls</code></pre></li>
- <li>Ray trace, save the image!</li></ol>
+<p>Download the script <a href="https://raw.githubusercontent.com/betainverse/methyls/master/pymol/showmethyls.py">here</a>.</p>
 
-<div class="figure"><img src="/img/methyls.png" alt="" />
+<p>Usage: Load the script into pymol using the run&hellip; item in the pymol File menu to select this script or load it from the Pymol command line, then actually run it using the showmethyls command:</p>
+
+<pre><code> PyMOL&gt; run /home/userName/path/toscript/showmethyls.py
+ PyMOL&gt; showmethyls</code></pre>
+
+<p>Note that you can use the cd command on the pymol command line as you would in bash/tcsh, if you don&rsquo;t remember the exact path to the script by heart.</p>
+
+<div class="figure"><img src="/img/spherelegend.png" alt="" />
+ <p class="caption"></p></div>
+
+<div class="figure"><img src="/img/methyls2.png" alt="" />
  <p class="caption"></p></div>
   <footer>
     <script type="text/javascript">
@@ -147,11 +125,11 @@ PyMOL&gt; show sticks, resn ALA+ILE+LEU+VAL+MET and not (name c,o,n)</code></pre
     </script>
     <a href="https://twitter.com/share"
        class="twitter-share-button"
-       data-url="http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/"
+       data-url="http://www.example.com/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/"
        data-dnt="true">
       "Tweet"</a>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-    <g:plusone size="medium" href="http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/"></g:plusone>
+    <g:plusone size="medium" href="http://www.example.com/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/"></g:plusone>
     <script type="text/javascript">
       var disqus_shortname = 'shortname';
       (function() {
@@ -164,11 +142,9 @@ PyMOL&gt; show sticks, resn ALA+ILE+LEU+VAL+MET and not (name c,o,n)</code></pre
     </script>
     <div id="disqus_thread"></div>
     <ul class="pager">
-    <li class="previous">
-      <a href="/blog/2014/10/30/simple-linux-tutorials/">&larr; <em>simple linux tutorials</em></a>
-    </li>
+
     <li class="next">
-      <a href="/blog/2014/10/13/pymol-color-by-data/"><em>Pymol Color By Data</em> &rarr;</a>
+      <a href="/blog/2014/10/30/simple-linux-tutorials/"><em>simple linux tutorials</em> &rarr;</a>
     </li>
     </ul>
   </footer>

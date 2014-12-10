@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">Scripts for structural biology: Posts tagged 'linux'</title>
+ <link rel="self" href="http://www.example.com/feeds/linux.atom.xml" />
+ <link href="http://www.example.com/tags/linux.html" />
+ <id>urn:http-www-example-com:-tags-linux-html</id>
+ <updated>2014-10-30T11:58:11Z</updated>
+ <entry>
+  <title type="text">simple linux tutorials</title>
+  <link rel="alternate" href="http://www.example.com/blog/2014/10/30/simple-linux-tutorials/?utm_source=linux&amp;utm_medium=Atom" />
+  <id>urn:http-www-example-com:-blog-2014-10-30-simple-linux-tutorials</id>
+  <published>2014-10-30T11:58:11Z</published>
+  <updated>2014-10-30T11:58:11Z</updated>
+  <author>
+   <name>Katie Edmonds</name></author>
+  <content type="html">&lt;html&gt;
+&lt;ul&gt;
+ &lt;li&gt;&lt;a href="http://pgbovine.net/command-line-tutorial.htm"&gt;http://pgbovine.net/command-line-tutorial.htm&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</content></entry></feed>

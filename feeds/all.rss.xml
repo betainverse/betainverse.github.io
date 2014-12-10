@@ -4,14 +4,44 @@
   <title>Scripts for structural biology: Scripts for structural biology</title>
   <description>Scripts for structural biology: Scripts for structural biology</description>
   <link>http://www.example.com/index.html</link>
-  <lastBuildDate>Tue, 14 Oct 2014 15:07:41 EDT</lastBuildDate>
-  <pubDate>Tue, 14 Oct 2014 15:07:41 EDT</pubDate>
+  <lastBuildDate>Wed, 10 Dec 2014 09:00:50 EST</lastBuildDate>
+  <pubDate>Wed, 10 Dec 2014 09:00:50 EST</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>Script to show methyls as spheres in Pymol</title>
+   <link>http://www.example.com/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2014-12-10-script-to-show-methyls-as-spheres-in-pymol</guid>
+   <pubDate>Wed, 10 Dec 2014 09:00:50 EST</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;Here is a pymol script to show methyl groups on your protein as spheres, color-coded by residue type.&lt;/p&gt;
+
+&lt;p&gt;Download the script &lt;a href="https://raw.githubusercontent.com/betainverse/methyls/master/pymol/showmethyls.py"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Usage: Load the script into pymol using the run&amp;hellip; item in the pymol File menu to select this script or load it from the Pymol command line, then actually run it using the showmethyls command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; PyMOL&amp;gt; run /home/userName/path/toscript/showmethyls.py
+ PyMOL&amp;gt; showmethyls&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that you can use the cd command on the pymol command line as you would in bash/tcsh, if you don&amp;rsquo;t remember the exact path to the script by heart.&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/img/spherelegend.png" alt="" /&gt;
+ &lt;p class="caption"&gt;&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/img/methyls2.png" alt="" /&gt;
+ &lt;p class="caption"&gt;&lt;/p&gt;&lt;/div&gt;&lt;/html&gt;</description></item>
+  <item>
+   <title>simple linux tutorials</title>
+   <link>http://www.example.com/blog/2014/10/30/simple-linux-tutorials/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2014-10-30-simple-linux-tutorials</guid>
+   <pubDate>Thu, 30 Oct 2014 11:58:11 EST</pubDate>
+   <description>&lt;html&gt;
+&lt;ul&gt;
+ &lt;li&gt;&lt;a href="http://pgbovine.net/command-line-tutorial.htm"&gt;http://pgbovine.net/command-line-tutorial.htm&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</description></item>
   <item>
    <title>Coloring Methyls in Pymol</title>
    <link>http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/?utm_source=all&amp;utm_medium=RSS</link>
    <guid>urn:http-www-example-com:-blog-2014-10-14-coloring-methyls-in-pymol</guid>
-   <pubDate>Tue, 14 Oct 2014 15:07:41 EDT</pubDate>
+   <pubDate>Tue, 14 Oct 2014 15:07:41 EST</pubDate>
    <description>&lt;html&gt;
 &lt;p&gt;This post expands on &lt;a href="http://betainverse.github.io/blog/2014/10/13/pymol-color-by-data/"&gt;yesterday&amp;rsquo;s&lt;/a&gt; post that was focused on coloring protein structures by residue in Pymol.&lt;/p&gt;
 
@@ -55,7 +85,7 @@ PyMOL&amp;gt; show sticks, resn ALA+ILE+LEU+VAL+MET and not (name c,o,n)&lt;/cod
    <title>Pymol Color By Data</title>
    <link>http://www.example.com/blog/2014/10/13/pymol-color-by-data/?utm_source=all&amp;utm_medium=RSS</link>
    <guid>urn:http-www-example-com:-blog-2014-10-13-pymol-color-by-data</guid>
-   <pubDate>Mon, 13 Oct 2014 14:27:13 EDT</pubDate>
+   <pubDate>Mon, 13 Oct 2014 14:27:13 EST</pubDate>
    <description>&lt;html&gt;
 &lt;p&gt;This post expands on &lt;a href="http://kpwu.wordpress.com/2007/11/27/pymol-example-coloring-surface-by-b-factor/"&gt;info&lt;/a&gt; from a few other &lt;a href="http://kpwu.wordpress.com/2012/09/11/pymol-custom-spectrum-colors/"&gt;blog&lt;/a&gt; posts.&lt;/p&gt;
 

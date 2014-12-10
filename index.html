@@ -6,7 +6,7 @@
     <title>Scripts for structural biology</title>
     <meta name="description" content="Scripts for structural biology">
     <meta name="author"      content="Katie Edmonds">
-    <meta name="keywords"    content="pymol, all">
+    <meta name="keywords"    content="pymol, linux, all">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="http://www.example.com/index.html">
@@ -64,6 +64,8 @@
               <ul class="dropdown-menu">
                 <li><a href="/index.html">All Posts</a></li>
 
+<li><a href="/tags/linux.html">linux</a></li>
+
 <li><a href="/tags/pymol.html">pymol</a></li>
               </ul>
             </li>
@@ -88,6 +90,40 @@
 
 
           <article>
+  <header>
+    <h2><a href='/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/'>Script to show methyls as spheres in Pymol</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2014-12-10" pubdate="true">2014-12-10</time> :: <span class="tags"><a href="/tags/pymol.html">pymol</a></span></p>
+  </header>
+
+<p>Here is a pymol script to show methyl groups on your protein as spheres, color-coded by residue type.</p>
+
+<p>Download the script <a href="https://raw.githubusercontent.com/betainverse/methyls/master/pymol/showmethyls.py">here</a>.</p>
+
+<p>Usage: Load the script into pymol using the run&hellip; item in the pymol File menu to select this script or load it from the Pymol command line, then actually run it using the showmethyls command:</p>
+
+<pre><code> PyMOL&gt; run /home/userName/path/toscript/showmethyls.py
+ PyMOL&gt; showmethyls</code></pre>
+
+<p>Note that you can use the cd command on the pymol command line as you would in bash/tcsh, if you don&rsquo;t remember the exact path to the script by heart.</p>
+
+<div class="figure"><img src="/img/spherelegend.png" alt="" />
+ <p class="caption"></p></div>
+
+<div class="figure"><img src="/img/methyls2.png" alt="" />
+ <p class="caption"></p></div>
+</article>
+<article>
+  <header>
+    <h2><a href='/blog/2014/10/30/simple-linux-tutorials/'>simple linux tutorials</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2014-10-30" pubdate="true">2014-10-30</time> :: <span class="tags"><a href="/tags/linux.html">linux</a></span></p>
+  </header>
+
+<ul>
+ <li><a href="http://pgbovine.net/command-line-tutorial.htm">http://pgbovine.net/command-line-tutorial.htm</a></li></ul>
+</article>
+<article>
   <header>
     <h2><a href='/blog/2014/10/14/coloring-methyls-in-pymol/'>Coloring Methyls in Pymol</a></h2>
     <p class='date-and-tags'>
