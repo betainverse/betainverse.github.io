@@ -90,6 +90,25 @@
 
           <article>
   <header>
+    <h2><a href='/blog/2014/12/18/pymol-sphere-representation-and-ionic-radii/'>Pymol: sphere representation and ionic radii</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2014-12-18" pubdate="true">2014-12-18</time> :: <span class="tags"><a href="/tags/pymol.html">pymol</a></span></p>
+  </header>
+
+<p>I just want to point out and reiterate an old <a href="https://www.mail-archive.com/pymol-users@lists.sourceforge.net/msg04718.html">forum message</a> about using PyMOL to display ions as spheres. The spheres representation shows the van der Waals radius of an atom. Apparently PyMOL stores the nonionic radii by default, 1.73 A for Mg, for example, rather than 0.71 A for Mg++. If you look up the desired ionic radius:</p>
+
+<p><a href="https://www.webelements.com/nickel/atom_sizes.html">https://www.webelements.com/nickel/atom_sizes.html</a></p>
+
+<p>You can set them in PyMOL using the alter command, to obtain a more appropriate picture:</p>
+
+<pre><code> PyMOL&gt; alter (elem Ni), vdw=0.83
+ PyMOL&gt; rebuild</code></pre>
+
+<div class="figure"><img src="/img/Ni.png" alt="" />
+ <p class="caption"></p></div>
+</article>
+<article>
+  <header>
     <h2><a href='/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/'>Script to show methyls as spheres in Pymol</a></h2>
     <p class='date-and-tags'>
 <time datetime="2014-12-10" pubdate="true">2014-12-10</time> :: <span class="tags"><a href="/tags/pymol.html">pymol</a></span></p>

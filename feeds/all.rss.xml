@@ -4,9 +4,26 @@
   <title>Scripts for structural biology: Scripts for structural biology</title>
   <description>Scripts for structural biology: Scripts for structural biology</description>
   <link>http://www.example.com/index.html</link>
-  <lastBuildDate>Wed, 10 Dec 2014 09:00:50 EST</lastBuildDate>
-  <pubDate>Wed, 10 Dec 2014 09:00:50 EST</pubDate>
+  <lastBuildDate>Thu, 18 Dec 2014 11:18:41 EST</lastBuildDate>
+  <pubDate>Thu, 18 Dec 2014 11:18:41 EST</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>Pymol: sphere representation and ionic radii</title>
+   <link>http://www.example.com/blog/2014/12/18/pymol-sphere-representation-and-ionic-radii/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2014-12-18-pymol-sphere-representation-and-ionic-radii</guid>
+   <pubDate>Thu, 18 Dec 2014 11:18:41 EST</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;I just want to point out and reiterate an old &lt;a href="https://www.mail-archive.com/pymol-users@lists.sourceforge.net/msg04718.html"&gt;forum message&lt;/a&gt; about using PyMOL to display ions as spheres. The spheres representation shows the van der Waals radius of an atom. Apparently PyMOL stores the nonionic radii by default, 1.73 A for Mg, for example, rather than 0.71 A for Mg++. If you look up the desired ionic radius:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.webelements.com/nickel/atom_sizes.html"&gt;https://www.webelements.com/nickel/atom_sizes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can set them in PyMOL using the alter command, to obtain a more appropriate picture:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; PyMOL&amp;gt; alter (elem Ni), vdw=0.83
+ PyMOL&amp;gt; rebuild&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/img/Ni.png" alt="" /&gt;
+ &lt;p class="caption"&gt;&lt;/p&gt;&lt;/div&gt;&lt;/html&gt;</description></item>
   <item>
    <title>Script to show methyls as spheres in Pymol</title>
    <link>http://www.example.com/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/?utm_source=all&amp;utm_medium=RSS</link>

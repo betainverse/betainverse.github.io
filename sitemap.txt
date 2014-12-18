@@ -2,4 +2,5 @@ http://www.example.com/blog/2014/10/14/coloring-methyls-in-pymol/
 http://www.example.com/blog/2014/10/13/pymol-color-by-data/
 http://www.example.com/blog/2014/10/30/simple-linux-tutorials/
 http://www.example.com/blog/2014/12/10/script-to-show-methyls-as-spheres-in-pymol/
+http://www.example.com/blog/2014/12/18/pymol-sphere-representation-and-ionic-radii/
 http://www.example.com/About.html
