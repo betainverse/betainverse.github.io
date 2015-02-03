@@ -4,9 +4,16 @@
   <title>Scripts for structural biology: Scripts for structural biology</title>
   <description>Scripts for structural biology: Scripts for structural biology</description>
   <link>http://www.example.com/index.html</link>
-  <lastBuildDate>Fri, 19 Dec 2014 12:56:29 EST</lastBuildDate>
-  <pubDate>Fri, 19 Dec 2014 12:56:29 EST</pubDate>
+  <lastBuildDate>Tue, 03 Feb 2015 14:48:14 EST</lastBuildDate>
+  <pubDate>Tue, 03 Feb 2015 14:48:14 EST</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>Fun little bioinformatics primers</title>
+   <link>http://www.example.com/blog/2015/02/03/fun-little-bioinformatics-primers/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2015-02-03-fun-little-bioinformatics-primers</guid>
+   <pubDate>Tue, 03 Feb 2015 14:48:14 EST</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;a href="http://www.liacs.nl/~hoogeboo/mcb/nature_primer.html"&gt;Here&amp;rsquo;s&lt;/a&gt; a great list of primers on various topics in bioinformatics, published in Nature Biotechnology and PloS Computational Biology. Of course, you need access to these journals to read the articles.&lt;/p&gt;&lt;/html&gt;</description></item>
   <item>
    <title>A few useful bioinformatics sites</title>
    <link>http://www.example.com/blog/2014/12/19/a-few-useful-bioinformatics-sites/?utm_source=all&amp;utm_medium=RSS</link>

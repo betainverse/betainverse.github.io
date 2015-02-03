@@ -4,7 +4,17 @@
  <link rel="self" href="http://www.example.com/feeds/all.atom.xml" />
  <link href="http://www.example.com/index.html" />
  <id>urn:http-www-example-com:-index-html</id>
- <updated>2014-12-19T12:56:29Z</updated>
+ <updated>2015-02-03T14:48:14Z</updated>
+ <entry>
+  <title type="text">Fun little bioinformatics primers</title>
+  <link rel="alternate" href="http://www.example.com/blog/2015/02/03/fun-little-bioinformatics-primers/?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:http-www-example-com:-blog-2015-02-03-fun-little-bioinformatics-primers</id>
+  <published>2015-02-03T14:48:14Z</published>
+  <updated>2015-02-03T14:48:14Z</updated>
+  <author>
+   <name>Katie Edmonds</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;&lt;a href="http://www.liacs.nl/~hoogeboo/mcb/nature_primer.html"&gt;Here&amp;rsquo;s&lt;/a&gt; a great list of primers on various topics in bioinformatics, published in Nature Biotechnology and PloS Computational Biology. Of course, you need access to these journals to read the articles.&lt;/p&gt;&lt;/html&gt;</content></entry>
  <entry>
   <title type="text">A few useful bioinformatics sites</title>
   <link rel="alternate" href="http://www.example.com/blog/2014/12/19/a-few-useful-bioinformatics-sites/?utm_source=all&amp;utm_medium=Atom" />
