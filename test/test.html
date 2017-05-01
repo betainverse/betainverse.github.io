@@ -27,7 +27,7 @@
 	  <a style="color:#9900ff">West Side</a><br><br>
   
 	  &nbsp;&nbsp;&nbsp;<input type="checkbox" id="StartID" CHECKED onclick="ToggleStart()" />  
-	  <a style="color:#004400">Ride Start</a><br>
+	  <a style="color:#004400">Run Start</a><br>
   
 	  &nbsp;&nbsp;&nbsp;<input type="checkbox" id="RestStopsID" CHECKED onclick="RestStops()"/>
 	  <a style="color:#004400">Rest Stops</a><br>
@@ -75,7 +75,7 @@
   };
 
 var ridestart=new google.maps.Marker({
-  position:{lat:39.15437247291251,lng:-86.52293804638421},
+  position:{lat:39.15672,lng:-86.52692},
   visible:true
   });
 
@@ -201,12 +201,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
         
 // REST STOPS
       
-CCTRailTrailCap = "Rest Stop at CCTRailTrail";
-        // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
-        CCTRailTrailRest = DOICON(32,32,16,32,39.083434, -86.592302,restimage);
-        var CCTRailTrailRestInfo = new google.maps.InfoWindow({ content:CCTRailTrailCap });
-        if (!(dd.CCTRailTrailID.checked)) CCTRailTrailRest.setVisible(false);
-        
 ShadysideCap = "Rest Stop at on Shadyside Rd<br>at clearing overlooking lake";
       // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
       ShadysideRest = DOICON(32,32,16,32,39.06738539264629,-86.46151028083166,restimage);
