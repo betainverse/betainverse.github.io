@@ -93,6 +93,19 @@ function initialize() {
   setit(CCTRailTrailRest,CCTRailTrailRestInfo);
   setit(ClearCreekNLoo,ClearCreekNLooInfo);
   setit(ClearCreekFSLoo,ClearCreekFSLooInfo);
+  RunCropAss.setMap(map);
+  RunI69Ass.setMap(map);
+  RunVictorAnn.setMap(map);
+  WaterHighAss.setMap(map);
+  WaterMontAnn.setMap(map);
+  EastBrAee.setMap(map);
+  EastCovAww.setMap(map);
+  WestKirbyAnn.setMap(map);
+  WestLschAss.setMap(map);
+  WestYAne.setMap(map);
+  WestCAse.setMap(map);
+  WestIAss.setMap(map);
+  WestVernalAee.setMap(map)}
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -102,13 +115,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
        {ridestart.setVisible(true)}
         else {ridestart.setVisible(false)}}
         
-//    function RestStops() {dd=document.cksform;
-//        if (dd.RestStopsID.checked) {
-//       { if (dd.CCTRailTrailID.checked) CCTRailTrailRest.setVisible(true)}
-//       { if (dd.OlcottHydeParkID.checked) ShadysideRest.setVisible(true)}
-//       { if (dd.JordanID.checked) {HuntersXingRest.setVisible(true); BoatLaunchRest.setVisible(true); TrailheadRest.setVisible(true)}}
-//       { if (dd.PattersonID.checked) KarstRest.setVisible(true)} }
-//        else {CCTRailTrailRest.setVisible(false); ShadysideRest.setVisible(false); HuntersXingRest.setVisible(false); BoatLaunchRest.setVisible(false); TrailheadRest.setVisible(false); KarstRest.setVisible(false)} }
+    function RestStops() {dd=document.cksform;
+        if (dd.RestStopsID.checked) {
+       { if (dd.CCTRailTrailID.checked) CCTRailTrailRest.setVisible(true)}
+       { if (dd.OlcottHydeParkID.checked) ShadysideRest.setVisible(true)}
+       { if (dd.JordanID.checked) {HuntersXingRest.setVisible(true); BoatLaunchRest.setVisible(true); TrailheadRest.setVisible(true)}}
+       { if (dd.PattersonID.checked) KarstRest.setVisible(true)} }
+        else {CCTRailTrailRest.setVisible(false); ShadysideRest.setVisible(false); HuntersXingRest.setVisible(false); BoatLaunchRest.setVisible(false); TrailheadRest.setVisible(false); KarstRest.setVisible(false)} }
         
         function Loos() {if (dd.LoosID.checked) {
         { if (dd.CCTRailTrailID.checked) ClearCreekNLoo.setVisible(true)}
@@ -116,7 +129,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
          else {ClearCreekFSLoo.setVisible(false); ClearCreekNLoo.setVisible(false);
          
       function CCTRailTrail() {if (dd.CCTRailTrailID.checked)
-       {CCTRailTrailLine.setVisible(true); RunCropAss.setVisible(true); ClearCreekFSLoo.setVisible(true); ClearCreekNLoo.setVisible(true)}}
+       {CCTRailTrailLine.setVisible(true); RunCropAss.setVisible(true); RunI69Ass.setVisible(true); RunVictorAnn.setVisible(true);
+       {if (dd.RestStopsID.checked) CCTRailTrailRest.setVisible(true)} {if (dd.LoosID.checked) {ClearCreekFSLoo.setVisible(true); 
+           ClearCreekNLoo.setVisible(true)}} }
+        else {CCTRailTrailLine.setVisible(false);  CCTRailTrailRest.setVisible(false); ClearCreekFSLoo.setVisible(false); ClearCreekNLoo.setVisible(false);
+         RunCropAss.setVisible(false); RunI69Ass.setVisible(false); RunVictorAnn.setVisible(false)}}
         
       function OlcottHydePark() {if (dd.OlcottHydeParkID.checked)
        {OlcottHydeParkLine.setVisible(true); WaterMontAnn.setVisible(true); WaterHighAss.setVisible(true); {if (dd.RestStopsID.checked) ShadysideRest.setVisible(true)} {if (dd.LoosID.checked) OliticLoo.setVisible(true)} }
