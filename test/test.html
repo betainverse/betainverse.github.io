@@ -56,7 +56,7 @@
   
     var thezoom = 12;
     
-    if (mm=='0') var mapcenter = {lat:39.146860,lng:-86.526948};
+    if (mm=='0') var mapcenter = {lat:39.1256,lng:-86.5106};
       else if (mm=='1')  var mapcenter = {lat:39.1217,lng:-86.5532};
       else if (mm=='2') var mapcenter = {lat:39.1151,lng:-86.5073};
       else if (mm=='3') var mapcenter = {lat:39.1357,lng:-86.4751};
@@ -91,8 +91,18 @@ function initialize() {
   PattersonLine.setMap(map);
   ridestart.setMap(map);
   setit(CCTRailTrailRest,CCTRailTrailRestInfo);
+  setit(ShadysideRest,ShadysideRestInfo);
+  setit(HuntersXingRest,HuntersXingRestInfo);
+  setit(BoatLaunchRest,BoatLaunchRestInfo);
+  setit(TrailheadRest,TrailheadRestInfo);
+  setit(KarstRest,KarstRestInfo);
   setit(ClearCreekNLoo,ClearCreekNLooInfo);
   setit(ClearCreekFSLoo,ClearCreekFSLooInfo);
+  setit(OliticLoo,OliticLooInfo);
+  setit(PineGroveLoo,PineGroveLooInfo);
+  setit(TrailheadLoo,TrailheadLooInfo);
+  setit(KarstLoo,KarstLooInfo);
+  setit(DetmerLoo,DetmerLooInfo);
   RunCropAss.setMap(map);
   RunI69Ass.setMap(map);
   RunVictorAnn.setMap(map);
@@ -126,7 +136,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
         function Loos() {if (dd.LoosID.checked) {
         { if (dd.CCTRailTrailID.checked) ClearCreekNLoo.setVisible(true)}
         { if (dd.CCTRailTrailID.checked) ClearCreekFSLoo.setVisible(true)}
+        { if (dd.OlcottHydeParkID.checked) OliticLoo.setVisible(true) }
+        { if (dd.JordanID.checked) { PineGroveLoo.setVisible(true); TrailheadLoo.setVisible(true) }}
+        { if (dd.PattersonID.checked) { KarstLoo.setVisible(true); DetmerLoo.setVisible(true) }}}
          else {ClearCreekFSLoo.setVisible(false); ClearCreekNLoo.setVisible(false);
+         OliticLoo.setVisible(false); PineGroveLoo.setVisible(false); TrailheadLoo.setVisible(false); KarstLoo.setVisible(false); DetmerLoo.setVisible(false)} }
          
       function CCTRailTrail() {if (dd.CCTRailTrailID.checked)
        {CCTRailTrailLine.setVisible(true); RunCropAss.setVisible(true); RunI69Ass.setVisible(true); RunVictorAnn.setVisible(true);
@@ -187,10 +201,35 @@ google.maps.event.addDomListener(window, 'load', initialize);
         
 // REST STOPS
       
+ShadysideCap = "Rest Stop at on Shadyside Rd<br>at clearing overlooking lake";
       // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
-//      KarstRest = DOICON(32,32,16,32,39.14021617762997,-86.59767905162049,restimage);
-//        var KarstRestInfo = new google.maps.InfoWindow({ content:KarstRestCap });
-//      if (!(dd.PattersonID.checked)) KarstRest.setVisible(false);
+      ShadysideRest = DOICON(32,32,16,32,39.06738539264629,-86.46151028083166,restimage);
+        var ShadysideRestInfo = new google.maps.InfoWindow({ content:ShadysideCap });
+      if (!(dd.OlcottHydeParkID.checked)) ShadysideRest.setVisible(false);
+      
+      HuntersXingCap = "Rest Stop at Old<br>Hunter's Crossing";
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      HuntersXingRest = DOICON(32,32,16,32,39.13561084158748,-86.42427936951496,restimage);
+        var HuntersXingRestInfo = new google.maps.InfoWindow({ content:HuntersXingCap });
+      if (!(dd.JordanID.checked)) HuntersXingRest.setVisible(false);
+      
+      BoatLaunchCap = "Rest Stop at Pine Grove<br>Boat Launch Ramp";
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      BoatLaunchRest = DOICON(32,32,16,32,39.10687977734032,-86.39874217989144,restimage);
+        var BoatLaunchRestInfo = new google.maps.InfoWindow({ content:BoatLaunchCap });
+      if (!(dd.JordanID.checked)) BoatLaunchRest.setVisible(false);
+    
+      TrailheadCap = "Rest Stop at Trailhead<br>Market and Noshery";
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      TrailheadRest = DOICON(32,32,16,32,39.11624397796454,-86.42819252841539,restimage);
+        var TrailheadRestInfo = new google.maps.InfoWindow({ content:TrailheadCap });
+      if (!(dd.JordanID.checked)) TrailheadRest.setVisible(false);
+
+      KarstRestCap = "Rest Stop at<br>Karst Farm Park";
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      KarstRest = DOICON(32,32,16,32,39.14021617762997,-86.59767905162049,restimage);
+        var KarstRestInfo = new google.maps.InfoWindow({ content:KarstRestCap });
+      if (!(dd.PattersonID.checked)) KarstRest.setVisible(false);
       
 // LOOS
       
@@ -206,11 +245,76 @@ google.maps.event.addDomListener(window, 'load', initialize);
         var ClearCreekFSLooInfo = new google.maps.InfoWindow({ content:ClearCreekFSLooCap });
       if (!(dd.CCTRailTrailID.checked)) ClearCreekFSLoo.setVisible(false);
 
+      OliticLooCap = "Loo at Olitic Park";
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      OliticLoo = DOICON(18,18,18,9,39.12563395197322,-86.51067941314587,toiletsimage);
+        var OliticLooInfo = new google.maps.InfoWindow({ content:OliticLooCap });
+      if (!(dd.OlcottHydeParkID.checked)) OliticLoo.setVisible(false);      
+
+      PineGroveLooCap = "Loo near Pine Grove<br>Boat Launch Ramp";
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      PineGroveLoo = DOICON(18,18,18,9,39.10676145454485,-86.39993792642127,toiletsimage);
+        var PineGroveLooInfo = new google.maps.InfoWindow({ content:PineGroveLooCap });
+      if (!(dd.JordanID.checked)) PineGroveLoo.setVisible(false);
+
+      TrailheadLooCap = "Loo at Trailhead";
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      TrailheadLoo = DOICON(18,18,9,9,39.116220,-86.428313,toiletsimage);
+        var TrailheadLooInfo = new google.maps.InfoWindow({ content:TrailheadLooCap });
+      if (!(dd.JordanID.checked)) TrailheadLoo.setVisible(false);
+      
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      KarstLoo = DOICON(18,18,9,9,39.14006560245232,-86.59758243006186,toiletsimage);
+        var KarstLooInfo = new google.maps.InfoWindow({ content:"Loo at Karst<br>Farm Park" });
+      if (!(dd.PattersonID.checked)) KarstLoo.setVisible(false);
+      
+      // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
+      DetmerLoo = DOICON(18,18,9,18,39.180081,-86.580247,toiletsimage);
+        var DetmerLooInfo = new google.maps.InfoWindow({ content:"Loo at Will<br>Detmer Park" });
+      if (!(dd.PattersonID.checked)) DetmerLoo.setVisible(false);
+      
 //ARROWS
       
       // Size2 Anchor2 WindowAnchor2 point2 iconimage caption
-//      RunCropAss = DOICON(13,13,12,6,39.102725,-86.567733,ssimage);
-//      if (!(dd.CCTRailTrailID.checked)) RunCropAss.setVisible(false);
+      RunCropAss = DOICON(13,13,12,6,39.102725,-86.567733,ssimage);
+      if (!(dd.CCTRailTrailID.checked)) RunCropAss.setVisible(false);
+
+      RunI69Ass = DOICON(13,13,12,3,39.097946,-86.562356,ssimage);
+      if (!(dd.CCTRailTrailID.checked)) RunI69Ass.setVisible(false);
+      
+      RunVictorAnn = DOICON(13,13,0,6,39.097361,-86.558460,nnimage);
+      if (!(dd.CCTRailTrailID.checked)) RunVictorAnn.setVisible(false);
+
+      WaterHighAss = DOICON(24,24,24,12,39.137920,-86.517608,ssimage);
+      if (!(dd.OlcottHydeParkID.checked)) WaterHighAss.setVisible(false);     
+
+      WaterMontAnn = DOICON(24,24,0,12,39.144067,-86.504207,nnimage);
+      if (!(dd.OlcottHydeParkID.checked)) WaterMontAnn.setVisible(false);
+
+      EastBrAee = DOICON(13,13,9,12,39.160346,-86.484689,eeimage);
+      if (!(dd.JordanID.checked)) EastBrAee.setVisible(false);
+
+      EastCovAww = DOICON(13,13,0,0,39.154546,-86.481860,wwimage);
+      if (!(dd.JordanID.checked)) EastCovAww.setVisible(false);
+      
+      WestKirbyAnn = DOICON(24,24,24,12,39.146429,-86.610246,nnimage);
+      if (!(dd.PattersonID.checked)) WestKirbyAnn.setVisible(false);
+
+      WestLschAss = DOICON(24,24,24,12,39.187122,-86.592677,ssimage);
+      if (!(dd.PattersonID.checked)) WestLschAss.setVisible(false);
+      
+      WestYAne = DOICON(9,9,9,9,39.178227,-86.600362,neimage);
+      if (!(dd.PattersonID.checked)) WestYAne.setVisible(false);
+      
+      WestCAse = DOICON(9,9,9,0,39.172470,-86.600167,seimage);
+      if (!(dd.PattersonID.checked)) WestCAse.setVisible(false);
+      
+      WestIAss = DOICON(13,13,12,6,39.167076,-86.598122,ssimage);
+      if (!(dd.PattersonID.checked)) WestIAss.setVisible(false);
+
+      WestVernalAee = DOICON(24,24,12,0,39.179046,-86.580420,eeimage);
+      if (!(dd.PattersonID.checked)) WestVernalAee.setVisible(false);
+
 
 var CCTRailTrailPoints = [{lat:39.15672,lng:-86.52692},{lat:39.15646,lng:-86.52692},{lat:39.15646,lng:-86.52705},{lat:39.15556,lng:-86.52703},{lat:39.15556,lng:-86.52761},{lat:39.15556,lng:-86.52761},{lat:39.15559,lng:-86.52913},{lat:39.15558,lng:-86.5302},{lat:39.15561,lng:-86.53245},{lat:39.1556,lng:-86.53506},{lat:39.15562,lng:-86.53596},{lat:39.15562,lng:-86.53623},{lat:39.15345,lng:-86.53624},{lat:39.15056,lng:-86.53629},{lat:39.15056,lng:-86.5365},{lat:39.15056,lng:-86.53688},{lat:39.15056,lng:-86.53688},{lat:39.15055,lng:-86.53767},{lat:39.1506,lng:-86.53878},{lat:39.14999,lng:-86.53879},{lat:39.14697,lng:-86.53884},{lat:39.14607,lng:-86.53887},{lat:39.14604,lng:-86.53911},{lat:39.14599,lng:-86.53918},{lat:39.14493,lng:-86.54025},{lat:39.14357,lng:-86.54166},{lat:39.14357,lng:-86.54166},{lat:39.14342,lng:-86.54182},{lat:39.14351,lng:-86.54209},{lat:39.14355,lng:-86.5423},{lat:39.14356,lng:-86.54247},{lat:39.14353,lng:-86.54264},{lat:39.14339,lng:-86.543},{lat:39.14318,lng:-86.54366},{lat:39.14312,lng:-86.54394},{lat:39.14313,lng:-86.54468},{lat:39.14317,lng:-86.54631},{lat:39.14311,lng:-86.54664},{lat:39.14307,lng:-86.54679},{lat:39.14307,lng:-86.54679},{lat:39.14286,lng:-86.54734},{lat:39.14254,lng:-86.54834},{lat:39.14247,lng:-86.5487},{lat:39.14242,lng:-86.54926},{lat:39.1424,lng:-86.54995},{lat:39.14238,lng:-86.55144},{lat:39.14238,lng:-86.55157},{lat:39.14232,lng:-86.55186},{lat:39.14222,lng:-86.55214},{lat:39.14206,lng:-86.55242},{lat:39.14182,lng:-86.55272},{lat:39.14119,lng:-86.55349},{lat:39.14106,lng:-86.55378},{lat:39.14101,lng:-86.55414},{lat:39.14096,lng:-86.5544},{lat:39.14096,lng:-86.55508},{lat:39.14099,lng:-86.55614},{lat:39.14071,lng:-86.55626},{lat:39.14022,lng:-86.55633},{lat:39.13953,lng:-86.5561},{lat:39.13932,lng:-86.55678},{lat:39.13932,lng:-86.55678},{lat:39.13918,lng:-86.55728},{lat:39.13898,lng:-86.55824},{lat:39.13879,lng:-86.55911},{lat:39.13869,lng:-86.55956},{lat:39.13864,lng:-86.55968},{lat:39.13848,lng:-86.56004},{lat:39.1384,lng:-86.56037},{lat:39.138,lng:-86.56033},{lat:39.13747,lng:-86.56034},{lat:39.13694,lng:-86.56036},{lat:39.13649,lng:-86.56036},{lat:39.13648,lng:-86.56081},{lat:39.13638,lng:-86.56079},{lat:39.1363,lng:-86.56079},{lat:39.13621,lng:-86.56083},{lat:39.13616,lng:-86.5609},{lat:39.13614,lng:-86.56099},{lat:39.13608,lng:-86.56097},{lat:39.13601,lng:-86.56088},{lat:39.13602,lng:-86.56079},{lat:39.13601,lng:-86.56076},{lat:39.13595,lng:-86.56075},{lat:39.13585,lng:-86.5607},{lat:39.13572,lng:-86.56061},{lat:39.13544,lng:-86.56053},{lat:39.13534,lng:-86.56052},{lat:39.13534,lng:-86.56052},{lat:39.13511,lng:-86.56051},{lat:39.13455,lng:-86.56056},{lat:39.13403,lng:-86.56063},{lat:39.13368,lng:-86.56065},{lat:39.13307,lng:-86.56057},{lat:39.13292,lng:-86.56056},{lat:39.13283,lng:-86.56059},{lat:39.13269,lng:-86.56071},{lat:39.13254,lng:-86.56087},{lat:39.1324,lng:-86.56094},{lat:39.1322,lng:-86.56093},{lat:39.13191,lng:-86.56074},{lat:39.1317,lng:-86.56054},{lat:39.13141,lng:-86.56005},{lat:39.13125,lng:-86.55992},{lat:39.13036,lng:-86.55941},{lat:39.13018,lng:-86.55922},{lat:39.1295,lng:-86.55832},{lat:39.12928,lng:-86.55803},{lat:39.12898,lng:-86.55778},{lat:39.12787,lng:-86.55702},{lat:39.12778,lng:-86.55697},{lat:39.12774,lng:-86.55699},{lat:39.12743,lng:-86.55726},{lat:39.12673,lng:-86.55791},{lat:39.12664,lng:-86.55793},{lat:39.12655,lng:-86.5579},{lat:39.12631,lng:-86.55773},{lat:39.12609,lng:-86.55761},{lat:39.1258,lng:-86.55741},{lat:39.12552,lng:-86.55729},{lat:39.12539,lng:-86.55719},{lat:39.12492,lng:-86.55659},{lat:39.12455,lng:-86.55619},{lat:39.12433,lng:-86.55588},{lat:39.12419,lng:-86.55566},{lat:39.12411,lng:-86.55558},{lat:39.12395,lng:-86.55547},{lat:39.12332,lng:-86.55523},{lat:39.12315,lng:-86.55512},{lat:39.12308,lng:-86.55503},{lat:39.12283,lng:-86.5547},{lat:39.12249,lng:-86.55422},{lat:39.12241,lng:-86.55406},{lat:39.12227,lng:-86.55357},{lat:39.12219,lng:-86.55343},{lat:39.12203,lng:-86.55329},{lat:39.12178,lng:-86.55317},{lat:39.12135,lng:-86.55303},{lat:39.12094,lng:-86.55283},{lat:39.12018,lng:-86.55258},{lat:39.11984,lng:-86.55235},{lat:39.11964,lng:-86.55219},{lat:39.11927,lng:-86.55175},{lat:39.11877,lng:-86.55117},{lat:39.11816,lng:-86.55072},{lat:39.11733,lng:-86.5502},{lat:39.11699,lng:-86.54993},{lat:39.11666,lng:-86.54977},{lat:39.11627,lng:-86.54967},{lat:39.11599,lng:-86.54964},{lat:39.11589,lng:-86.54959},{lat:39.11567,lng:-86.5494},{lat:39.11553,lng:-86.54922},{lat:39.11547,lng:-86.54919},{lat:39.11523,lng:-86.5492},{lat:39.115,lng:-86.54933},{lat:39.11488,lng:-86.54937},{lat:39.11467,lng:-86.54938},{lat:39.11421,lng:-86.54935},{lat:39.11387,lng:-86.54925},{lat:39.11367,lng:-86.54916},{lat:39.11313,lng:-86.54883},{lat:39.11205,lng:-86.54794},{lat:39.1108,lng:-86.54684},{lat:39.11044,lng:-86.54649},{lat:39.1102,lng:-86.54617},{lat:39.10996,lng:-86.54569},{lat:39.10994,lng:-86.54564},{lat:39.10994,lng:-86.54564},{lat:39.10982,lng:-86.54525},{lat:39.10973,lng:-86.54477},{lat:39.10971,lng:-86.54332},{lat:39.1097,lng:-86.5425},{lat:39.11011,lng:-86.5423},{lat:39.11131,lng:-86.54188},{lat:39.11131,lng:-86.54188},{lat:39.11404,lng:-86.54087},{lat:39.11543,lng:-86.54028},{lat:39.1173,lng:-86.53964},{lat:39.11755,lng:-86.53959},{lat:39.11761,lng:-86.53957},{lat:39.11769,lng:-86.53945},{lat:39.11775,lng:-86.53942},{lat:39.11831,lng:-86.53924},{lat:39.12019,lng:-86.53851},{lat:39.12153,lng:-86.53804},{lat:39.12469,lng:-86.53687},{lat:39.12681,lng:-86.53616},{lat:39.12899,lng:-86.53583},{lat:39.12973,lng:-86.53577},{lat:39.12973,lng:-86.53577},{lat:39.1352,lng:-86.53535},{lat:39.13531,lng:-86.5353},{lat:39.13539,lng:-86.53524},{lat:39.13541,lng:-86.53521},{lat:39.13564,lng:-86.53511},{lat:39.13589,lng:-86.53502},{lat:39.13596,lng:-86.53492},{lat:39.13654,lng:-86.53477},{lat:39.13778,lng:-86.53462},{lat:39.13877,lng:-86.53457},{lat:39.13962,lng:-86.53457},{lat:39.14016,lng:-86.53462},{lat:39.14101,lng:-86.53483},{lat:39.14479,lng:-86.53585},{lat:39.1458,lng:-86.53608},{lat:39.1458,lng:-86.53608},{lat:39.14623,lng:-86.53617},{lat:39.14729,lng:-86.53629},{lat:39.14801,lng:-86.53634},{lat:39.15056,lng:-86.53629},{lat:39.15345,lng:-86.53624},{lat:39.15562,lng:-86.53623},{lat:39.15562,lng:-86.53596},{lat:39.15562,lng:-86.53572},{lat:39.15562,lng:-86.53572},{lat:39.1556,lng:-86.53506},{lat:39.15562,lng:-86.53368},{lat:39.1556,lng:-86.53132},{lat:39.15559,lng:-86.52913},{lat:39.15556,lng:-86.52703},{lat:39.15587,lng:-86.52704},{lat:39.15587,lng:-86.52704},{lat:39.15646,lng:-86.52705},{lat:39.15646,lng:-86.52692},{lat:39.15672,lng:-86.52692}
 ];
